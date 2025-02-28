@@ -13,13 +13,47 @@
   </head>
   <body class="font-poppins bg-base-background text-black">
     <!-- NAVBAR START -->
-    <nav class="border-primary-border flex w-full flex-col justify-between border bg-white px-20 py-5 sm:flex-row sm:items-center">
-      <div class="left-menu flex flex-col items-center gap-2 sm:flex-row sm:gap-14">
-        <div class="flex items-center gap-1.5">
-          <img src="assets/images/icons/obito.svg" alt="icon-obito" />
-          <h1 class="text-2xl font-extrabold">Obito</h1>
+    <nav class="border-primary-border w-full flex-col justify-between border bg-white lg:flex-row lg:items-center lg:px-20 lg:py-5">
+      <!-- MENU DEKSTOP START -->
+      <div class="border-primary-border flex w-full items-center justify-between border-b px-4 py-2 md:p-5 lg:border-0 lg:p-0">
+        <div class="left-menu flex flex-col gap-2 lg:flex-row lg:items-center lg:gap-14">
+          <div class="flex items-center gap-1.5">
+            <img src="assets/images/icons/obito.svg" alt="icon-obito" />
+            <h1 class="text-2xl font-extrabold">Obito</h1>
+          </div>
+          <ul class="hidden gap-10 lg:flex">
+            <li>
+              <a href="#Home" class="active font-semibold">Home</a>
+            </li>
+            <li>
+              <a href="#Pricing">Pricing</a>
+            </li>
+            <li>
+              <a href="#Features">Features</a>
+            </li>
+            <li>
+              <a href="#Testimonials">Testimonials</a>
+            </li>
+          </ul>
         </div>
-        <ul class="hidden gap-10 sm:flex">
+        <div class="right-menu divide-primary-border flex items-center gap-5">
+          <a href="" class="border-primary-border border-r pr-5">
+            <img class="" src="assets/images/icons/device-message.svg" alt="icon-device-message" />
+          </a>
+          <div class="hidden items-center gap-3 *:rounded-full *:px-5 *:py-3 *:font-semibold lg:flex">
+            <a href="" class="border-primary-border border">Sign Up</a>
+            <a href="" class="bg-primary text-white">My Account</a>
+          </div>
+          <button id="TriggerMenu" class="lg:hidden">
+            <img src="assets/images/icons/menu.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <!-- MENU DEKSTOP END -->
+
+      <!-- MENU MOBILE START -->
+      <div id="MenuMobile" class="hidden h-fit">
+        <ul class="flex flex-col gap-2 p-4 *:p-2">
           <li>
             <a href="#Home" class="active font-semibold">Home</a>
           </li>
@@ -29,26 +63,24 @@
           <li>
             <a href="#Features">Features</a>
           </li>
-          <li>
+          <li class="border-primary-border border-b">
             <a href="#Testimonials">Testimonials</a>
           </li>
         </ul>
-      </div>
-      <div class="right-menu divide-primary-border flex items-center gap-5 divide-x-1">
-        <a href="# p-2">
-          <img class="pr-5" src="assets/images/icons/device-message.svg" alt="icon-device-message" />
-        </a>
-        <div class="flex items-center gap-3 *:rounded-full *:px-5 *:py-3 *:font-semibold">
+
+        <div class="flex w-full items-center justify-center gap-2 p-4 pt-0 *:w-full *:rounded-full *:px-5 *:py-3 *:text-center *:font-semibold">
           <a href="" class="border-primary-border border">Sign Up</a>
           <a href="" class="bg-primary text-white">My Account</a>
         </div>
       </div>
+
+      <!-- MENU MOBILE END -->
     </nav>
     <!-- NAVBAR END -->
 
     <!-- MAIN START -->
-    <main class="grid w-full grid-cols-2">
-      <div class="left-col my-14 mr-14 ml-20">
+    <main class="flex w-full flex-col-reverse *:w-full lg:flex-row">
+      <div class="left-col p-5 lg:py-14 lg:pr-14 lg:pl-20">
         <form action="" class="border-primary-border flex w-full flex-col gap-4 rounded-3xl border bg-white p-5">
           <h1 class="text-2xl font-bold">Upgrade Your Skills</h1>
           <!-- Photo Upload -->
@@ -116,12 +148,13 @@
           <button type="submit" class="bg-primary cursor-pointer rounded-full py-3.5 font-semibold text-white">Sign Up</button>
         </form>
       </div>
-      <div class="right-col *:w-full">
-        <img src="assets/images/banner/banner-auth.png" alt="banner-auth" />
+      <div class="right-col">
+        <img class="h-80 w-full object-cover lg:h-full" src="assets/images/banner/banner-auth.png" alt="banner-auth" />
       </div>
     </main>
     <!-- MAIN END -->
 
     <script src="js/input-image.js"></script>
+    <script src="js/trigger-menu.js"></script>
   </body>
 </html>
