@@ -1,7 +1,6 @@
 node_modules
 tailwind.config.js
-package-lock.json
-package.json
+# package-lock.json
+# package.json
 .prettierrc.json
 assal.html
-.gitignore
