@@ -12,13 +12,13 @@
   </head>
   <body class="font-poppins bg-base-background text-black">
     <!-- NAVBAR START -->
-    <nav class="border-primary-border flex w-full items-center justify-between border bg-white px-20 py-5">
-      <div class="left-menu flex items-center gap-14">
+    <nav class="border-primary-border flex w-full flex-col justify-between border bg-white px-20 py-5 sm:flex-row sm:items-center">
+      <div class="left-menu flex flex-col items-center gap-2 sm:flex-row sm:gap-14">
         <div class="flex items-center gap-1.5">
           <img src="assets/images/icons/obito.svg" alt="icon-obito" />
           <h1 class="text-2xl font-extrabold">Obito</h1>
         </div>
-        <ul class="flex gap-10">
+        <ul class="hidden gap-10 sm:flex">
           <li>
             <a href="#Home" class="active font-semibold">Home</a>
           </li>
@@ -34,7 +34,9 @@
         </ul>
       </div>
       <div class="right-menu divide-primary-border flex items-center gap-5 divide-x-1">
-        <img class="pr-5" src="assets/images/icons/device-message.svg" alt="icon-device-message" />
+        <a href="# p-2">
+          <img class="pr-5" src="assets/images/icons/device-message.svg" alt="icon-device-message" />
+        </a>
         <div class="flex items-center gap-3 *:rounded-full *:px-5 *:py-3 *:font-semibold">
           <a href="" class="border-primary-border border">Sign Up</a>
           <a href="" class="bg-primary text-white">My Account</a>
@@ -42,5 +44,83 @@
       </div>
     </nav>
     <!-- NAVBAR END -->
+
+    <!-- MAIN START -->
+    <main class="grid w-full grid-cols-2">
+      <div class="left-col my-14 mr-14 ml-20">
+        <form action="" class="border-primary-border flex w-full flex-col gap-4 rounded-3xl border bg-white p-5">
+          <h1 class="text-2xl font-bold">Upgrade Your Skills</h1>
+          <!-- Photo Upload -->
+          <div class="flex w-fit flex-col items-center">
+            <input type="file" id="photoUpload" accept="image/*" class="hidden" onchange="previewImage(event)" />
+
+            <div class="flex items-center space-x-4">
+              <!-- Label untuk upload gambar -->
+              <label for="photoUpload" class="border-primary-border hover:border-primary flex h-32 w-32 cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-dashed transition">
+                <!-- Gambar preview -->
+                <img id="preview" src="" alt="upload-photos" class="hidden h-full w-full rounded-full object-cover" />
+
+                <!-- Teks upload -->
+                <div id="uploadText" class="text-center">
+                  <span class="text-4xl text-gray-400">+</span>
+                  <p class="text-sm text-gray-500">Add Photo</p>
+                </div>
+              </label>
+
+              <!-- Tombol DELETE PHOTO -->
+              <button id="deletePhoto" class="bg-base-danger text-danger hidden cursor-pointer rounded-full px-2.5 py-1.5 text-xs font-bold" onclick="removeImage()"> DELETE PHOTO </button>
+            </div>
+          </div>
+
+          <!-- Complete Name -->
+          <div class="flex flex-col gap-2">
+            <label for="CompleteName">Complete Name</label>
+            <div class="complete-name border-primary-border focus-within:border-primary flex items-center gap-2 rounded-full border px-5 py-3.5 transition">
+              <img src="assets/images/icons/profile.svg" alt="profile-icon" />
+              <input class="peer placeholder:text-placeholder w-full font-semibold placeholder:font-normal focus-within:outline-none" type="text" name="complete-name" id="CompleteName" placeholder="Type your full name" />
+            </div>
+          </div>
+          <!-- Occupation -->
+          <div class="flex flex-col gap-2">
+            <label for="Occupation">Occupation</label>
+            <div class="occupation border-primary-border focus-within:border-primary flex items-center gap-2 rounded-full border px-5 py-3.5 transition">
+              <img src="assets/images/icons/briefcase.svg" alt="briefcase-icon" />
+              <input class="placeholder:text-placeholder w-full font-semibold placeholder:font-normal focus-within:outline-none" type="text" name="complete-name" id="CompleteName" placeholder="Enter your job title or role" />
+            </div>
+          </div>
+          <!-- Email Address -->
+          <div class="flex flex-col gap-2">
+            <label for="email">Email Address</label>
+            <div class="email border-primary-border focus-within:border-primary flex items-center gap-2 rounded-full border px-5 py-3.5 transition">
+              <img src="assets/images/icons/sms.svg" alt="sms-icon" />
+              <input class="placeholder:text-placeholder w-full font-semibold placeholder:font-normal focus-within:outline-none" type="email" name="email" id="email" placeholder="Type your valid email address" />
+            </div>
+          </div>
+          <!--Password -->
+          <div class="flex flex-col gap-2">
+            <label for="password">Password</label>
+            <div class="password border-primary-border focus-within:border-primary flex items-center gap-2 rounded-full border px-5 py-3.5 transition">
+              <img src="assets/images/icons/shield-security.svg" alt="shield-security-icon" />
+              <input class="placeholder:text-placeholder w-full font-semibold placeholder:font-normal focus-within:outline-none" type="password" name="password" id="password" placeholder="Create a strong password" />
+            </div>
+          </div>
+          <!-- Confirm Password -->
+          <div class="flex flex-col gap-2">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="confirm-pasword border-primary-border focus-within:border-primary flex items-center gap-2 rounded-full border px-5 py-3.5 transition">
+              <img src="assets/images/icons/shield-security.svg" alt="shield-security-icon" />
+              <input class="placeholder:text-placeholder w-full font-semibold placeholder:font-normal focus-within:outline-none" type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-enter your password to confirm" />
+            </div>
+          </div>
+          <button type="submit" class="bg-primary cursor-pointer rounded-full py-3.5 font-semibold text-white">Sign Up</button>
+        </form>
+      </div>
+      <div class="right-col *:w-full">
+        <img src="assets/images/banner/banner-auth.png" alt="banner-auth" />
+      </div>
+    </main>
+    <!-- MAIN END -->
+
+    <script src="js/input-image.js"></script>
   </body>
 </html>
