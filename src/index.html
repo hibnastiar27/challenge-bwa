@@ -69,8 +69,8 @@
         </ul>
 
         <div class="flex w-full items-center justify-center gap-2 p-4 pt-0 *:w-full *:rounded-full *:px-5 *:py-3 *:text-center *:font-semibold">
-          <a href="" class="border-primary-border border">Sign Up</a>
-          <a href="" class="bg-primary text-white">My Account</a>
+          <a href="#SignUp" class="border-primary-border border">Sign Up</a>
+          <a href="#MyAccount" class="bg-primary text-white">My Account</a>
         </div>
       </div>
 
@@ -82,26 +82,22 @@
     <main class="flex w-full flex-col-reverse *:w-full lg:flex-row">
       <div class="left-col p-5 lg:py-14 lg:pr-14 lg:pl-20">
         <form action="" class="border-primary-border flex w-full flex-col gap-4 rounded-3xl border bg-white p-5">
-          <h1 class="text-2xl font-bold">Upgrade Your Skills</h1>
+          <h1 class="text-center text-2xl font-bold lg:text-start">Upgrade Your Skills</h1>
           <!-- Photo Upload -->
-          <div class="flex w-fit flex-col items-center">
+          <div class="flex flex-col items-center lg:w-fit">
             <input type="file" id="photoUpload" accept="image/*" class="hidden" onchange="previewImage(event)" />
 
             <div class="flex items-center space-x-4">
-              <!-- Label untuk upload gambar -->
               <label for="photoUpload" class="border-primary-border hover:border-primary flex h-32 w-32 cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-dashed transition">
-                <!-- Gambar preview -->
                 <img id="preview" src="" alt="upload-photos" class="hidden h-full w-full rounded-full object-cover" />
 
-                <!-- Teks upload -->
                 <div id="uploadText" class="text-center">
                   <span class="text-4xl text-gray-400">+</span>
                   <p class="text-sm text-gray-500">Add Photo</p>
                 </div>
               </label>
 
-              <!-- Tombol DELETE PHOTO -->
-              <button id="deletePhoto" class="bg-base-danger text-danger hidden cursor-pointer rounded-full px-2.5 py-1.5 text-xs font-bold" onclick="removeImage()"> DELETE PHOTO </button>
+              <button id="deletePhoto" class="bg-base-danger text-danger hidden cursor-pointer rounded-full px-2.5 py-1.5 text-xs font-bold" onclick="removeImage()">DELETE PHOTO</button>
             </div>
           </div>
 
@@ -134,7 +130,7 @@
             <label for="password">Password</label>
             <div class="password border-primary-border focus-within:border-primary flex items-center gap-2 rounded-full border px-5 py-3.5 transition">
               <img src="assets/images/icons/shield-security.svg" alt="shield-security-icon" />
-              <input class="placeholder:text-placeholder w-full font-semibold placeholder:font-normal focus-within:outline-none" type="password" name="password" id="password" placeholder="Create a strong password" />
+              <input class="password-input placeholder:text-placeholder w-full font-semibold placeholder:font-normal focus-within:outline-none" type="password" name="password" id="password" placeholder="Create a strong password" />
             </div>
           </div>
           <!-- Confirm Password -->
@@ -142,7 +138,7 @@
             <label for="confirmPassword">Confirm Password</label>
             <div class="confirm-pasword border-primary-border focus-within:border-primary flex items-center gap-2 rounded-full border px-5 py-3.5 transition">
               <img src="assets/images/icons/shield-security.svg" alt="shield-security-icon" />
-              <input class="placeholder:text-placeholder w-full font-semibold placeholder:font-normal focus-within:outline-none" type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-enter your password to confirm" />
+              <input class="password-input placeholder:text-placeholder w-full font-semibold placeholder:font-normal focus-within:outline-none" type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-enter your password to confirm" />
             </div>
           </div>
           <button type="submit" class="bg-primary cursor-pointer rounded-full py-3.5 font-semibold text-white">Sign Up</button>
@@ -154,6 +150,7 @@
     </main>
     <!-- MAIN END -->
 
+    <script src="js/change-type-password.js"></script>
     <script src="js/input-image.js"></script>
     <script src="js/trigger-menu.js"></script>
   </body>
